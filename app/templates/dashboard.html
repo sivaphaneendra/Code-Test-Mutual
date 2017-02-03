@@ -1,0 +1,58 @@
+<div class="page">
+    <div class="row top-buffer">
+        <div class="col-md-6">
+            <label> {{dashboardCtrl.msg}} </label>
+        </div>
+    </div>
+    <div class="row top-buffer">
+        <div class="col-md-6">
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Friends</h3>
+                </div>
+                <ul class="list-group tab-pane">
+                    <div class="list-group-item" ng-repeat="user in dashboardCtrl.users">
+                        <div ng-click="dashboardCtrl.showConversationThread(user)" class="user">
+                            {{user.username}}
+                            <span class="pull-right userstatus" title="{{user.status}}" ng-class="{'active': user.status == 'Active' ,
+                                                            'busy': user.status == 'Busy',
+                                                            'inactive': user.status == 'Inactive',
+                                                            'offline': user.status == 'Offline'} ">
+                            </span>
+                        </div>
+                    </div>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <h5 ng-if="dashboardCtrl.showMessage">
+                <span class="label label-primary">Not a friend of your's, please send a request</span>
+            </h5>
+            <div class="panel panel-info" ng-if="dashboardCtrl.showThread">
+                <div class="panel-heading">
+                    <h3 class="panel-title">
+                        Conversations</h3>
+                </div>
+                <ul class="list-group tab-pane-conversation">
+                    <li class="col-md-12" ng-repeat="msg in dashboardCtrl.messages">
+                        <div class="message" ng-class="{'float-left': msg.type == 'self' ,
+                                                        'float-right': msg.type == 'other'}">
+                            <div class="user">{{msg.username}}</div>
+                            <div class="type" ng-class="{'selfmessage': msg.type == 'self' ,
+                                                        'bg-primary text-white': msg.type == 'other'}">{{msg.message}}</div>
+                        </div>
+
+                    </li>
+                </ul>
+                <footer class="footer">
+                    <div class="container">
+                        <button type="button" class="btn btn-default btn-sm refresh_feed" ng-click="dashboardCtrl.showConversationThread()">
+                            <span class="glyphicon glyphicon-refresh"></span> Refresh feed
+                        </button>
+                    </div>
+                </footer>
+            </div>
+        </div>
+    </div>
+</div>

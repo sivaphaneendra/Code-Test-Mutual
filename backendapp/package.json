@@ -1,0 +1,9 @@
+{
+  "devDependencies": {
+    "chai": "^3.5.0"
+  },
+  "dependencies": {
+    "socket.io": "^1.7.2",
+    "supertest": "^2.0.1"
+  }
+}

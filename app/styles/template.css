@@ -1,0 +1,77 @@
+.top-buffer {
+    margin-top:20px;
+}
+
+.userstatus {
+    width: 10px;height: 10px; margin-right:5px; vertical-align: middle;
+}
+
+.active {
+    background-color: #5dd255;
+}
+
+.busy {
+    background:repeating-linear-gradient(-45deg,#e57a79,#e57a79 1px,#d00e0d 2px,#d00e0d 3px) repeat scroll 0% 0% transparent;
+}
+
+.inactive{
+    background-color: #ffd200;
+}
+
+.offline{
+    background-color: #ccc;
+}
+
+.tab-pane{
+    height:200px;
+    overflow-y:scroll;
+    width:100%;
+}
+
+.user{
+    cursor: pointer;
+}
+
+.panel footer{
+  border-top: 1px solid #bce8f1;
+}
+
+.refresh_feed{
+    border: 0;
+}
+
+.tab-pane-conversation{
+    height:400px;
+    overflow-y:scroll;
+    width:100%;
+}
+
+.float-left{
+    float: left;
+}
+
+.float-right{
+    float: right;
+}
+
+li{
+   list-style-type: none;
+}
+
+.message .user{
+    font-size: 11px;
+    margin-top:5px;
+}
+
+.selfmessage{
+  background-color: #f7f7f7;
+}
+
+.message .type{
+    font-size: 14px;
+    margin-top:3px;
+    width:350px;
+    padding:5px;
+    border-radius:5px;
+    border: 1px solid #eee;
+}
